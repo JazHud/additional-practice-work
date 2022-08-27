@@ -53,3 +53,22 @@ function longestString(arrayOfStrings){
     }
     return longest;
 }
+
+let string = "Hi how are are you doing today?"
+function reverseString(string){
+    return string.split("").reverse().join("");
+}
+//elaborate on this idea
+let yummyFoods = ['Burgers', 'Pizza', 'Spaghetti', 'Tacos']
+    for (let i = 0; i < yummyFoods.length; i++){
+        console.log(yummyFoods[i]);
+}
+
+
+///exercises to build knowledge
+let myName =["J", "A", "Z", "M", "I", "N", "E"]
+for (let i = 0; i < myName.length; i++){
+    console.log(myName[i]);
+}
+
+
