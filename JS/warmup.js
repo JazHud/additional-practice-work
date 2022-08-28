@@ -71,4 +71,34 @@ for (let i = 0; i < myName.length; i++){
     console.log(myName[i]);
 }
 
+////personal web exercises found
+const kelvin = 0;
+//kelvin will stay constant with the const
+let celcius = kelvin - 273;
+// temp conversion from kelvin to celsius
+let fahrenheit = celcius * (9/5) + 32
+//temp conversion from celsius to fahrenheit
+fahrenheit = Math.floor(fahrenheit);
+//to make the decimal number to a whole number
+console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
+
+
+let newton = celcius * (33/100);
+newton = Math.floor(newton);
+console.log(`The temperature is ${newton} degrees Newton.`);
+
+const kelvin = 0;
+//kelvin will stay constant with the const
+let celcius = kelvin - 273;
+// temp conversion from kelvin to celsius
+let fahrenheit = celcius * (9/5) + 32
+//temp conversion from celsius to fahrenheith
+fahrenheit = Math.floor(fahrenheit);
+//to make the decimal number to a whole number
+console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
+
+
+let newton = celcius * (33/100);
+newton = Math.floor(newton);
+console.log(`The temperature is ${newton} degrees Newton.`);
 
