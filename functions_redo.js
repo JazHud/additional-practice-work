@@ -100,3 +100,8 @@ alert("The suggested tip is $" + calculateTip(percentage, billTotal));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount(originalPrice, discountPercent){
+    return originalPrice - (discountPercent * 100);
+}
+
