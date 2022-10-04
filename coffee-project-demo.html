@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-$END$
+<header>
+  <h1>Coffee!</h1>
+</header>
+<main>
+  <section>
+    <div id="coffees"></div>
+  </section>
+  <!--search form-->
+  <section>
+    <form>
+      <!--roast scrolldown-->
+      <label for="roast-selection">Roast</label>
+      <select id="roast-selection">
+        <option>light</option>
+        <option>medium</option>
+        <option>dark</option>
+        <option>all</option>
+      </select>
+      <!--coffee name input-->
+      <label for="coffee-name">Coffee Name</label>
+      <input id="coffee-name">
+      <!--submit button-->
+      <input id="submit" type="submit" />
+    </form>
+    <!--add a coffee form-->
+    <div>
+      <h1>Add a Coffee</h1>
+      <form>
+        <!--roast scrolldown-->
+        <label for="roast-selection-input">Roast</label>
+        <select id="roast-selection-input">
+          <option>light</option>
+          <option>medium</option>
+          <option>dark</option>
+        </select>
+        <!--coffee name input-->
+        <label for="coffee-name-input">Name</label>
+        <input id="coffee-name-input">
+        <!--submit button-->
+        <input id="submit" type="submit" />
+      </form>
+    </div>
+  </section>
+</main>
+<script src="main.js"></script>
 </body>
 </html>

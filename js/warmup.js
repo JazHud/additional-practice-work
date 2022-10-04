@@ -234,19 +234,217 @@ function desirableNeighborhood(neighborhoodsObject){
 ////what's the cost of each level? = level * level * priceOfCan
 ///need a totalCost accumulator variable and some kind of level variable that keeps tack of what level I'm on
 //and I need to keep looping until total cost > bonus
-function beeramid(bonus, price){
-        let totalCost = 0;
-        let levels = 0;
-        while (totalCost < bonus){
-            totalCost += levels * levels * price;
-            if (totalCost + ((levels + 1) ** 2 * price) > bonus){
-        break}
-            levels++;
+// function beeramid(bonus, price){
+//         let totalCost = 0;
+//         let levels = 0;
+//         while (totalCost < bonus){
+//             totalCost += levels * levels * price;
+//             if (totalCost + ((levels + 1) ** 2 * price) > bonus){
+//         break}
+//             levels++;
+//         }
+//         return levels;
+// }
+
+const attendance = {
+    miami: 32789,
+    buffalo: 45678,
+    portland: 24567
+}
+//Given the attendance object, write a function that returns the total attendance across all teams.
+function totalAttendance(attendanceObjects) {
+    let attendanceArray = Object.values(attendanceObjects);
+    let total = 0;
+    for (let i = 0; i < attendanceArray.length; i++) {
+        total += attendanceArray[i];
+    }
+    return total;
+}
+/////BOTH SOLUTIONS ARE CORRECT::: to see answer put totalAttendance(attendance) in webpage terminal
+//
+// function totalAttendance(attendanceObject){
+//         let total = 0;
+// for (const prop in attendance){
+//     total += attendance[prop];
+// }
+//     return total;
+// }
+//Given the attendance object, write a function that returns the average attendance.
+
+function averageAttendance(attendanceObject){
+        let total = 0;
+        for (const prop in attendance){
+            total += attendance[prop];
         }
-        return levels;
+        return total/Object.keys(attendance).length;
+}
+
+//Given the attendance object, write a function that returns an object with totalAttendance and averageAttendance properties set to the correct values.
+
+function createObject(attendanceObject){
+        let total = 0;
+        for (const prop in attendance){
+            total += attendance[prop];
+        }
+        return {
+            totalAttendance: total,
+            averageAttendance: total/Object.keys(attendance).length
+        }
+}
+
+/**
+ * Online Shopping
+ * Create a function named freeShipping that determines whether a shopping order is eligible for free shipping. An order is eligible for free shipping if the total cost of items purchased exceeds $50.00.
+ *
+ * Examples
+ *
+ * freeShipping({ Shampoo: 5.99, Rubber_Ducks: 15.99 }) ➞ false
+ * freeShipping({ Flatscreen_TV: 399.99 }) ➞ true
+ * freeShipping({ Monopoly: 11.99, Secret_Game: 35.99, Bananagrams: 13.99 }) ➞ true
+ *
+ * Notes
+ * Ignore tax or additional fees when calculating the total order cost.
+ */
+
+freeShippingOne = ({ Shampoo: 5.99, Rubber_Ducks: 15.99 })
+freeShippingTwo = ({ Flatscreen_TV: 399.99 })
+freeShippingThree = ({ Monopoly: 11.99, Secret_Game: 35.99, Bananagrams: 13.99 })
+
+function freeShipping(value) {
+    let price = Object.values(value);
+    console.log(price);
+    let total = 0
+    for (let i = 0; i < price.length; i++) {
+        total += price[i]
+        return (total);
+        // if (total > 50){
+        //     return true;
+        }
 }
 
 
 
 
 
+/**
+ * Convert Address to Object
+ * Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
+ *
+ * Examples
+ *
+ * >> convertAddressToObject('8646 Sunny Oaks') ➞ {streetNumber: '8646', streetName: 'Sunny Oaks'}
+ * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
+ **/
+
+let address = '8646 Sunny Oaks';
+
+function convertAddressToObject(addressString) {
+//     return {
+//         streetNumber: addressString.substring(0, address.indexOf(' ')),
+//         streetName: addressString.substring(address.indexOf(' ') + 1)
+//     }
+//
+// }
+    //=======above same as below====ABOVE keeps it as a string 0 is starting point address.indexOff(' ') is the end point, streetName does not need end point since it defaults to the end of the string
+    //
+    // BELOW converts it to an Array
+
+    let addressArray = addressString.split(' ');
+    return {
+        streetNumber: addressString[0],
+        streetName: addressArray.slice(1, addressArray.length).join(' ')
+    }
+}
+
+
+/**
+ * Count total pets
+ * Write a function named totalPets that accepts an array of objects where each object represents a person, and has a 'pets' property for their owned pets. The function should return the sum of every object's numPets property.
+ *
+ * Examples
+ *
+  >> totalPets([
+ *       {name: 'Fernando Mendoza', pets: 1},
+ *       {name: 'Douglas Hirsh', pets: 8},
+ *       {name: 'Kenneth Howell', pets: 2}
+ *    ]) ➞ 11
+*/
+totalPets = [
+    {name: 'Fernando Mendoza', pets: 1},
+    {name: 'Douglas Hirsh', pets: 8},
+    {name: 'Kenneth Howell', pets: 2}
+   ]
+
+//  function totalPets(arrayOfObjects){
+//      let total = 0;
+//      for (let i = 0; i < arrayOfObjects.length; i++){
+//          total += arrayOfObjects[i].pets;
+//      }
+//      return total;
+// }
+
+// function totalPets(arrayOfObjects){
+//     let total = 0;
+//     arrayOfObjects.forEach(function (object){
+//         total += object.pets
+//     })
+//     return total;
+// }
+
+function totalPets(arrayOfObjects){
+    return arrayOfObjects.reduce(function (acc, currentValue){
+        return acc + currentValue.pets;
+    }, 0)
+}
+
+
+/**
+ * Find the Smallest and Biggest Numbers
+ * Create a function named minMax that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+ *
+ * Examples
+ * >> minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+ * >> minMax([2334454, 5]) ➞ [5, 2334454]
+ * >> minMax([1]) ➞ [1, 1]
+ *
+ *
+ *
+ */
+let numArray = [1, 2, 3, 4, 5];
+
+function minMax(){
+    let minMaxArray = [(Math.min(...numArray)), (Math.max(...numArray))]
+    return [minMaxArray]
+}
+
+
+
+
+
+/**
+ * Filter out Strings from an Array
+ * Create a function named filterArray that takes an array of non-negative integers and strings and return a new array without the strings.
+ *
+ * Examples
+ *
+ * >> filterArray([1, 2, "a", "b"]) ➞ [1, 2]
+ * >> filterArray([1, "a", "b", 0, 15]) ➞ [1, 0, 15]
+ * >> filterArray([1, 2, "aasf", "1", "123", 123]) ➞ [1, 2, 123]
+ *
+ * Notes
+ * Zero is a non-negative integer.
+ * The given array only has integers and strings.
+ * Numbers in the array should not repeat.
+ * The original order must be maintained.
+ */
+filterArrayOne = [1, 2, "a", "b"]
+filterArrayTwo = [1, "a", "b", 0, 15]
+filterArrayThree = [1, 2, "aasf", "1", "123", 123]
+
+function filterArray(array) {
+    let pullNumArray = array.filter(
+        element => typeof element === "number");
+    return pullNumArray
+}
+
+console.log(filterArray(filterArrayTwo));
