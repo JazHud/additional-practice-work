@@ -35,8 +35,43 @@ $("#blinkPink").on('click', function(){
     $("#loremParagraph").toggleClass('hotpink');
 }, 3000);
 });
+//problem number 7 on dom-assesment2::::::: could also give the div a data property and name <div data="thing">
+$('button#add-btn').on('click', function (){
+    let dataInputVal = $('input#new-data').val();
+    let newDiv = `<div data="thing>${dataInputVal}</div>`
+    $('#data').append(newDiv)
+});
 
+// TODO: Problem 8
+    $("#clean-data-btn").on('click', function (){
+        $("#data div").text("clean");  //<--if using data property use that name $('[thing]').text('clean');
+    });
 
+    // TODO: Problem 9
+    $("input#username").keyup(function (e){
+        let usernameVal = $(this).val();
+        if(usernameVal){
+            console.log("Yes something is written inside of the input box.")
+            $("login-btn").attr("disabled", false);
+        }else{
+            console.log("No, nothing is written.")
+            $("login-btn").attr('disabled', true)
+        }
+    });
 
-
-})
+    // TODO: Problem 10
+    $('#data>div').attr('data-thing')
+    $("button#search-btn").on('click', function() {
+        let searchInput = $("input#search-text").val()
+            $("[data-thing]").each(function(){
+                let searchText = $(this).text();
+                if (searchInput.toLowerCase() === searchText.toLowerCase()){
+                    $(this).css({
+                        'background-color': 'darkorange'
+                    });
+                } else {
+                    $(this).css({
+                        'background-color': '#999'
+                    });
+                }
+            })}
