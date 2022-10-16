@@ -159,3 +159,39 @@ let average = (num1, num2, num3) => {
 }
 console.log(average(1, 2, 3))
 ///////////////////////OBJECT MODELS//////////////////////////////
+function car(miles, company, color) {
+    this.color = color;
+    this.miles = miles;
+    this.company = company;
+}
+const myCar1 = new car(100, "honda", "pink");
+myCar1.price = 2000;
+console.log(myCar1);
+const myCar2 = new car(100, "ford", "purple");
+console.log(myCar2);
+////////////////////ARRAY//////////////////////////////
+const myList = ["Jazmine", "Hudson", true, 30, null, undefined, {
+    test: 'one',
+    score: 85,
+}, ['Dental Assistant', 'Web Developer']]
+console.log(myList);
+///to get the score w/in the object w/in the array
+console.log(myList[6].score);
+console.log(myList[6]["score"]);
+///to get the first element of the array w/in the array
+console.log(myList[7][0]);
+///manipulating the array
+const theList = ['Laurence', 'one', 'Svekis', true, 35, null, undefined, {
+    test: 'one'
+    , score: 55
+}, ['one', 'two']];
+let temp = Array.isArray(theList);
+theList[1] = "Hello World";
+temp = theList.indexOf(35);
+theList.push("pushed"); //add to end
+temp = theList.pop(); //remove last item
+temp = theList.shift();
+temp = theList.unshift("unshift"); //add to front of array
+temp = theList.splice(1, 2);
+console.log(theList);
+console.log(temp);
