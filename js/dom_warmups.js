@@ -74,4 +74,4 @@ $('button#add-btn').on('click', function (){
                         'background-color': '#999'
                     });
                 }
-            })}
+            })})})
