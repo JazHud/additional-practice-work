@@ -3,4 +3,4 @@ function showMultiplicationTable(number){
         console.log(`${i} * ${number} = ${i * number}`);
     }
 }
-showMultiplicationTable();
+showMultiplicationTable(7);
