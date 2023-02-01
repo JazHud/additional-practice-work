@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Daycare Roster</title>
+  <style>
+    table, th, td, tbody {
+      border: 1px solid black;
+      width: 400px;
+    }
+    row {
+
+    }
+  </style>
 </head>
 <body>
   <div class="container col-6">
@@ -15,14 +24,25 @@
       <label for="phone-number"></label>
       <input id="phone-number" placeholder="Phone Number">
 <!--NOTE will run into problems if the element or type isn't button -->
-      <button id="submit-child-info" type="button">Submit</button>
+      <input id="submit-child-info" type="button" onclick="addKid()" >Submit</input>
     </form>
     <br>
     <br>
   </div>
   <div class="container col-6">
-    <div>Children that are checked-in:
-      <p id="kidlist"></p>
+    <div class="container">Children that are checked-in:
+<!--      <p id="kidlist"></p>-->
+      <table>
+      <thead id="table-head">
+        <tr>
+          <th>Guardian</th>
+          <th>Child's Name</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
     </div>
   </div>
 
