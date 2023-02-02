@@ -1,5 +1,5 @@
 function addKid(){
-const btn = document.getElementById('submit-child-info');
+
 
 // let guardName = document.getElementById('guardian-name');
 // let childName = document.getElementById('childname');
@@ -22,10 +22,28 @@ tr.appendChild(tdphone);
 
 tableBody.appendChild(tr);
 }
+
+const btn = document.getElementById('submit-child-info');
+
+////making the child's information into an object
+// let childName = document.getElementById('childname').value;
+// let childGuard = document.getElementById('guardian-name').value;
+// let childNum = document.getElementById('phone-number').value;
+
+
+
 // let inputList = document.getElementById('kidlist');
 
-// btn.addEventListener('click', function (){
-//     let showkids = guardName.value + " " + childName.value +" " + phoneNum.value + "\n";
-//     inputList.append(showkids);
-// });
+btn.addEventListener('click', function (){
+    let listOfKids = []
+    let newKid = {
+        name: document.getElementById('childname').value,
+        guardian: document.getElementById('guardian-name').value,
+        phoneNum: document.getElementById('phone-number').value
+    };
+    listOfKids.push(newKid);
+    console.log(newKid);
+    console.log(listOfKids);
+    // inputList.append(showkids);
+});
 
