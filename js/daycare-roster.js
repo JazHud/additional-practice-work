@@ -1,11 +1,15 @@
 let submitBtn = document.getElementById('submit-child-info');
 submitBtn.addEventListener("click", addKid);
 
+let clearBtn = document.getElementById('clearBtn');
+clearBtn.addEventListener('click', clearBtn);
+
 let children = [];
 
 function addKid() {
 
     // getData();
+    clearRosert();
 
     children.push({
         id: Date.now().toString(),
@@ -22,6 +26,10 @@ function addKid() {
 //     if (dataString != null)
 //         children = JSON.parse(dataString);
 // }
+
+function clearRoster(){
+    localStorage.clear();
+}
 
 // to input the tables via loop
 function rosterUpdate(){
